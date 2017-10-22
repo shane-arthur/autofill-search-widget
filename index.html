@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LCBO Auto-Complete</title>
+    <script src="lcbo-auto-complete.js"></script>
+    <script>
+        (() => {
+            const options = {
+                url: 'http://lcboapi.com/products',
+                apiToken: 'MDoxMGZmNGI2OC0xOTgwLTExZTctODIzYS1hZjBjOTQxMDg5ZTQ6UDY3T3hsM2NUdlpSOHpoYzJUVlFrODZOUG9obUI5N1NxV2Rp',
+            };
+
+            document.addEventListener('DOMContentLoaded', () => autoComplete('[name=lcboAutoComplete]', options));
+            const textSearch = document.getElementById("searchAutoComplete");
+        })();
+    </script>
+    <style>
+        #showProduct {
+            height: 500px;
+            width: 400px;
+        }
+
+        #toolTip {
+            background: 'yellow'
+        }
+
+        .listItemSingular {
+            font-size: 10px;
+            display: block;
+        }
+
+        #searchAutoComplete {
+            width: 300px;
+        }
+
+        #showProduct {
+            margin: '10 px 10 px 10 px 10 px';
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="searchForm">
+        <input list="filteredLiquor" name="lcboAutoComplete" id="searchAutoComplete" placeholder="Start typing to search for beer!"
+            onkeyup="autoComplete(this.value)" />
+        <datalist id="filteredLiquor">
+        </datalist>
+    </form>
+    &nbsp;
+    <div id="showProduct">
+    </div>
+
+</body>
+
+</html>

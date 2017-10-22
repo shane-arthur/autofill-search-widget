@@ -1,0 +1,12 @@
+{
+  "name": "lcbo-auto-complete",
+  "version": "1.0.0",
+  "description": "Points lcbo-auto-complete developer assignment",
+  "author": "",
+  "main": "lcbo-auto-complete.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:Points/developer-assignments.git"
+  },
+  "homepage": "https://github.com/Points/developer-assignments/lcbo-auto-complete#README.md"
+}
